@@ -1,0 +1,23 @@
+title: Chris Merced - CS ePortfolio
+description: ePortfolio to Display Computer Science Program Accomplishments
+baseurl: "/CS499ePortfolio" 
+url: "https://chris-merced.github.io" 
+theme: minima
+
+author:
+  name: Chris Merced
+  email: christopher.merced@snhu.edu
+
+header_pages:
+  - code-review.md
+  - artifacts.md
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+collections:
+  enhancements:
+    output: true
+    permalink: /:collection/:name/
