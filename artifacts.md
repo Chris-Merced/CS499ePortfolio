@@ -81,6 +81,7 @@ The enhancement successfully demonstrated software engineering principles.
 ### Enhancement Process
 
 </details>
+
 ---
 
 ## Enhancement 3: Databases
