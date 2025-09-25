@@ -17,6 +17,7 @@ This ePortfolio demonstrates my mastery of key computer science concepts through
 
 ## Navigation
 
+- [Professional Self-Assessment](self-assessment) - An introduction to my skills and professional growth
 - [Code Review](code-review) - Video walkthrough of my enhancement plans
 - [Enhanced Artifacts](artifacts) - Showcase of my technical improvements
 
