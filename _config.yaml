@@ -9,6 +9,7 @@ author:
   email: christopher.merced@snhu.edu
 
 header_pages:
+  - self-assessment.md
   - code-review.md
   - artifacts.md
 
