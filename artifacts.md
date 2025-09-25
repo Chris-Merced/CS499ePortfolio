@@ -10,7 +10,7 @@ permalink: /artifacts
 
 ### Project: Contact Management Application
 **Original Course:** CS 320 - Software Testing, Automation, and Quality Assurance  
-**Language:** Java → JavaScript (Web Application)  
+**Language:** Java Migration to JavaScript (Web Application)  
 **Enhancement:** Language conversion with modern web architecture
 
 ### Repository Links
