@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Enhanced Artifacts
-permalink: /artifacts/
+permalink: /artifacts
 ---
 
 # Enhanced Artifacts
