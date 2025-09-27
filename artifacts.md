@@ -68,17 +68,43 @@ The enhancement successfully demonstrated software engineering principles.
 
 ### Repository Links
 - [Original Implementation](https://github.com/Chris-Merced/CS320ContactServiceOriginal)
-- [Enhanced with Hash Map Structure - To be Uploaded]()
+- [Enhanced with Hash Map Structure](https://github.com/Chris-Merced/CapstoneContactsApplicationWithHashmap)
 
 <details>
 <summary><strong>Enhancement Narrative</strong></summary>
 
 ### Artifact Description
+This artifact is a contact management application originally developed in Java for CS 320: Software Testing, Automation, and Quality Assurance. The original implementation used basic object-oriented principles with getter and setter methods to manage a contact list stored in an ArrayList data structure. The application provided fundamental CRUD operations for contact management but relied on linear search algorithms for data retrieval, resulting in O(n) time complexity for lookup operations.
+The enhanced version transforms this into a modern JavaScript web application while fundamentally improving the underlying data structure implementation. The enhancement specifically focuses on replacing linear search operations with hash map-based lookups to achieve O(1) average-case time complexity for contact retrieval operations.
 
 ### Justification for Inclusion
+I selected this artifact for my ePortfolio because it demonstrates my understanding of algorithmic efficiency and the practical impact of data structure selection on application performance. The enhancement showcases several key competencies in algorithms and data structures.
+The original implementation used findIndex() operations on arrays, which require linear traversal through all elements in the worst case. By implementing a hash map structure alongside the existing array, I reduced contact lookup operations from O(n) to O(1) average-case time complexity.
+The enhancement demonstrates my ability to select appropriate data structures for specific use cases. I implemented a dual-structure approach where the original array is preserved alongside the hashmap where the array maintains insertion order for display purposes while the hash map enables efficient key-based lookups.
+This implementation illustrates my understanding of the space-time trade-off principle. While the hash map increases memory usage, it provides significant performance improvements for search operations, which is crucial for scalability as the contact database grows.
+By adding a contactHashMap object that maintains key-value pairs where contact IDs serve as keys and contact objects serve as values, the searchContactByID(), deleteContact(), updateContact() and addContact() methods can perform direct object property access rather than iterating through array elements, significantly increasing performance throughout the application.
 
+### Course Outcomes Addressed
+- **Outcome 3** (Computing Solutions): The enhancement demonstrates my ability to design and evaluate computing solutions using algorithmic principles. I analyzed the performance bottleneck of linear search operations and implemented a solution that manages the trade-offs between memory usage and query performance. The decision to maintain both data structures shows evaluation of different solution approaches.
+- **Outcome 2** (Professional Communication): The implementation includes comprehensive documentation explaining the algorithmic improvements, performance benefits, and design decisions. The code is well-commented and follows professional naming conventions that make the efficiency improvements clear to technical audiences.
 
 ### Enhancement Process
+The process of enhancing this artifact provided significant learning opportunities in both theoretical and practical aspects of algorithm implementation.
+Working through the transition from array-based linear search to hash map lookups reinforced my understanding of how data structure choice directly impacts application performance. The decision to maintain both the original array and add the hashmap taught me that optimal solutions often involve combining multiple data structures rather than replacing one with another entirely.
+The enhancement process required me to think critically about when optimization is necessary and worthwhile. While the performance improvement from O(n) to O(1) lookup is theoretically significant, it reminded me to consider the practical implications based on expected data size and usage patterns.
+Implementing hash maps in JavaScript using object properties provided insight into how different programming languages handle associative data structures. Understanding that JavaScript objects function as hash tables reinforced the connection between language features and underlying algorithmic concepts.
+
+### Challenges Faced
+- **Data Consistency**: The primary challenge was ensuring data consistency between the array and hash map structures. Every add, update, and delete operation required careful coordination between both data structures to prevent synchronization issues.
+- **Incremental Enhancement**: Maintaining backward compatibility with existing array-based methods while adding hash map functionality required careful architectural planning.
+- **Language-Specific Implementation**: Adapting hash map concepts to JavaScript's object-based approach required understanding platform-specific considerations.
+
+### Skills Demonstrated
+- **Algorithm Analysis**: Deep understanding of time complexity trade-offs and performance optimization strategies
+- **Data Structure Design**: Appropriate selection and implementation of hash-based data structures for specific use cases
+- **Performance Optimization**: Measurable improvements in application responsiveness through algorithmic enhancements
+- **Technical Documentation**: Clear explanation of design decisions and performance improvements with supporting analysis
+
 
 </details>
 
