@@ -119,17 +119,67 @@ Implementing hash maps in JavaScript using object properties provided insight in
 ### Repository Links
 - [Original Implementation - Front End](https://github.com/Chris-Merced/Classic-Messenger-App-Frontend)
 - [Original Implementation - Back End](https://github.com/Chris-Merced/Classic-Messenger-App-Backend)
-- [Enhanced with Admin Interface - To be Uploaded]()
+- [Enhanced with Admin Interface - Front End](https://github.com/Chris-Merced/Classic-Messenger-App-Frontend/tree/feat/admin-panel)
+- [Enhanced with Admin Interface - Back End](https://github.com/Chris-Merced/Classic-Messenger-App-Backend/tree/feat/admin-panel)
 
+
+<details>
 <details>
 <summary><strong>Enhancement Narrative</strong></summary>
 
 ### Artifact Description
+This artifact is the Classic Messenger App, a full-stack messaging application originally developed as a personal project. The application is built with Node.js and Express on the backend, React on the frontend, and PostgreSQL as the database management system. The original implementation provided core messaging functionality including user authentication, real-time communication via WebSockets, friend management, and conversation handling. The application was deployed on Heroku and demonstrated foundational full-stack development skills.
+
+The enhanced version adds comprehensive administrative capabilities and database optimizations that significantly improve both security and performance. Specifically, the enhancement introduces role-based access control through an admin panel, implements user moderation features including banning and timeout functionality, and optimizes database performance through strategic indexing on frequently queried columns.
 
 ### Justification for Inclusion
+I selected this artifact for my ePortfolio because it demonstrates my ability to design and implement secure, scalable database solutions for real-world applications. The enhancement showcases several critical competencies in database management and security:
 
+**Role-Based Access Control Implementation**: The enhancement required careful design of privilege management systems that prevent unauthorized access to sensitive administrative functions. I implemented middleware authentication checks that verify both session validity and admin status before allowing access to protected routes. This demonstrates my understanding of defense-in-depth security principles where multiple layers of verification protect critical functionality.
+
+**Database Schema Evolution**: Adding the `banned` boolean column and `ban_expires` timestamp column to the users table required careful consideration of existing data integrity and application logic. I implemented these changes in a way that maintained backward compatibility while enabling new administrative features.
+
+**Strategic Database Indexing**: The implementation includes a concurrent index on the `LOWER(username)` column in the users table. This optimization directly addresses performance bottlenecks identified during development, where frequent username lookups for authentication and user searches were causing unnecessary query overhead. Creating the index concurrently ensures zero downtime during deployment, demonstrating awareness of production environment constraints.
+
+**Automated Maintenance Processes**: The cron job implementation that automatically unbans users when their ban period expires shows understanding of database maintenance automation and scheduled task management. This prevents manual administrative overhead and ensures consistent policy enforcement.
+
+**Secure Administrative Workflows**: The admin panel frontend validates input and provides clear feedback, while the backend implements server-side validation and authorization checks. This dual-layer approach demonstrates understanding that client-side validation alone is insufficient for security.
+
+The artifact was improved through the addition of three new backend routes (`/admin/ban`, `/admin/unban`, `/admin/adminStatus`), corresponding database query functions (`banUser()`, `unbanUser()`, `makeAdmin()`, `checkAdminStatus()`), middleware authentication for the admin router, modifications to the login controller to check ban status, and a React-based admin panel that provides an intuitive interface for administrative actions.
+
+### Course Outcomes Addressed
+- **Outcome 5** (Security Mindset): This enhancement primarily demonstrates a strong security mindset through multiple defensive measures. The implementation of role-based access control prevents privilege escalation by requiring both valid session authentication and admin status verification before allowing access to sensitive operations. The modification to the login controller that checks ban status before completing authentication demonstrates adversarial thinking by preventing banned users from circumventing restrictions. The middleware on the admin router creates a protective barrier that stops unauthorized requests before they reach controller logic. Additionally, deleting all active sessions when a user is banned ensures they cannot continue accessing the application even if they were logged in at the time of banning.
+
+- **Outcome 4** (Innovative Techniques): The use of concurrent indexing (`CREATE INDEX CONCURRENTLY`) demonstrates knowledge of advanced database techniques that allow schema modifications without application downtime. The automated cron job for ban expiration handling shows innovative application of scheduled task management to reduce manual administrative burden. The implementation of Redis pub/sub for real-time WebSocket communication across multiple server instances reflects understanding of scalable distributed system architecture.
+
+- **Outcome 3** (Computing Solutions): The enhancement required evaluating trade-offs between performance and security. The decision to check ban status during login adds a database query to the authentication process, but this overhead is justified by the security benefits. Similarly, adding the username index improves query performance but increases storage requirements and write overhead slightly. These decisions demonstrate the ability to analyze and manage design trade-offs based on application requirements.
+
+- **Outcome 2** (Professional Communication): The implementation includes clear error handling with meaningful messages, comprehensive comments explaining security considerations, and well-organized code structure that makes the administrative functionality easy to understand and maintain. The admin panel provides clear user feedback for all operations, demonstrating consideration for the end-user experience.
 
 ### Enhancement Process
+The process of enhancing this artifact provided significant learning opportunities in database security, performance optimization, and full-stack integration:
+
+**Authentication Architecture**: Implementing the admin middleware taught me about the importance of centralized authorization checks. Initially, I considered checking admin status within each controller function, but refactoring this into middleware demonstrates better separation of concerns and makes the codebase more maintainable. Understanding the difference between authentication (verifying identity) and authorization (verifying permissions) became clearer through this implementation.
+
+**Database Performance Considerations**: The decision to create the username index came from recognizing a pattern where `getUserByUsername()` was called repeatedly throughout the application for various operations. This taught me to identify performance bottlenecks by analyzing query patterns rather than just responding to obvious slowdowns. Using `CREATE INDEX CONCURRENTLY` required learning about PostgreSQL-specific features and understanding the trade-offs between standard and concurrent index creation.
+
+**Session Management Security**: Implementing the ban functionality revealed the importance of session invalidation. Initially, I only set the banned flag in the database, but realized that users with active sessions could continue using the application. Adding the logic to delete all sessions for banned users taught me about the security implications of stateful authentication and the need to consider all access pathways when implementing restrictions.
+
+**Cron Job Implementation**: Setting up the automated ban expiration check within the existing scheduled cleanup task taught me about efficient resource usage. Rather than creating a separate cron job, I added the unban logic to the existing session cleanup function that already ran on a schedule, demonstrating the principle of consolidating scheduled tasks when appropriate.
+
+### Challenges Faced
+- **Data Consistency**: The primary challenge was ensuring data consistency across the ban-related columns. The `banned` boolean and `ban_expires` timestamp needed to be managed carefully to prevent inconsistent states. For example, ensuring that permanent bans have a NULL `ban_expires` value while temporary bans have a valid timestamp required careful logic in both the `banUser()` and `unbanUser()` functions.
+
+- **Middleware Implementation**: Understanding Express middleware patterns and ensuring the middleware had access to the necessary request information (cookies, body parameters) required careful study of the Express request/response cycle.
+
+- **Automated Testing**: Testing the cron job functionality presented challenges because automated processes are difficult to observe in real-time. I learned to use shorter time intervals during development and implemented comprehensive logging to verify that the ban expiration logic executed correctly.
+
+### Skills Demonstrated
+- **Database Security**: Implemented role-based access controls with proper privilege management
+- **Performance Optimization**: Strategic use of database indexing to improve query performance
+- **Full-Stack Integration**: Seamlessly integrated administrative features across frontend and backend
+- **Security Mindset**: Applied defensive programming practices to protect against adversarial exploits
+- **System Architecture**: Designed scalable solutions considering distributed systems and zero-downtime deployments
 
 </details>
 
