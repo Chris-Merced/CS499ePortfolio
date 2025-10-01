@@ -123,7 +123,7 @@ Implementing hash maps in JavaScript using object properties provided insight in
 - [Enhanced with Admin Interface - Back End](https://github.com/Chris-Merced/Classic-Messenger-App-Backend/tree/feat/admin-panel)
 
 
-<details>
+
 <details>
 <summary><strong>Enhancement Narrative</strong></summary>
 
