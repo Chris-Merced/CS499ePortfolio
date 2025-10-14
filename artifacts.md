@@ -56,7 +56,7 @@ The enhancement successfully demonstrated software engineering principles.
 
 
 
-<details markdown="1">
+</details>
 
 ---
 
