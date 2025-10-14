@@ -28,6 +28,7 @@ Collaboration and Communication
 
 Group projects and peer reviews taught me to build collaborative environments where diverse perspectives improve outcomes. The Classic Messenger App required careful API design between frontend and backend that involved the consideration and collaboration of my peers, ensuring clear goals and milestones as well as comprehensive communication throughout the building process of these accomplishments. 
 
+
 Professional communication extends beyond documentation to code clarity. The enhancements in this portfolio demonstrate this through modular architecture and meaningful naming conventions. When implementing role based access control, I structured middleware and controllers to make security logic transparent and maintainable. Deploying applications to production taught me to balance technical requirements with user experience and operational constraints, enabling effective communication with both technical and non technical stakeholders.
 
 Data Structures, Algorithms, and Software Engineering
