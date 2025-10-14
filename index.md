@@ -21,6 +21,7 @@ Completing the Computer Science program at Southern New Hampshire University has
   
 The program built my technical foundation while clarifying career direction. Beyond the artifacts in this portfolio, I independently developed the Classic Messenger App, a full stack real time messaging platform. This project utilized Node.js, Express, WebSockets, Redis pub/sub for scalability, Multer for file handling, and PostgreSQL on the backend, with a React frontend using HTML, CSS, and WebSocket integration for real time communication. Building this production application taught me to architect complex systems, manage state across distributed components, and deploy to Heroku with continuous integration practices.
 
+
   
 Coursework in CS 405 (Secure Coding), CS 360 (Mobile Architecture), and CS 320 (Software Testing) strengthened my understanding of the software development lifecycle. The capstone process itself proved invaluable for developing professional communication skills. Creating code review videos taught me to explain technical decisions to diverse audiences, while writing enhancement narratives forced me to articulate design trade offs essential in professional environments.
 
