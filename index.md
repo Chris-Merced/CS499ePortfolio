@@ -17,7 +17,7 @@ This ePortfolio demonstrates my mastery of key computer science concepts through
 
 Completing the Computer Science program at Southern New Hampshire University has shaped my professional identity as a software engineer. Over two years, I developed comprehensive full stack web development skills, learned algorithmic efficiency principles, and cultivated a security conscious mindset. This ePortfolio demonstrates my growth across software design, algorithms and data structures, and database management, showcasing readiness to contribute professionally in web development with future goals in security engineering.
 
-<details>
+<details markdown="1">
   
 <summary><strong>Professional Self Assessment</strong></summary>
   
