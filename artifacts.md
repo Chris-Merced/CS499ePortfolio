@@ -17,7 +17,7 @@ permalink: /artifacts
 - [Original Java Code](https://github.com/Chris-Merced/CS320ContactServiceOriginal)
 - [Enhanced JavaScript Web App](https://github.com/Chris-Merced/CapstoneContactsApplication)
 
-<details>
+<details markdown="1">
 <summary><strong>Enhancement Narrative</strong></summary>
 
 ### Artifact Description
@@ -56,7 +56,7 @@ The enhancement successfully demonstrated software engineering principles.
 
 
 
-</details>
+<details markdown="1">
 
 ---
 
@@ -124,7 +124,7 @@ Implementing hash maps in JavaScript using object properties provided insight in
 
 
 
-<details>
+<details markdown="1">
 <summary><strong>Enhancement Narrative</strong></summary>
 
 ### Artifact Description
