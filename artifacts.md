@@ -70,7 +70,7 @@ The enhancement successfully demonstrated software engineering principles.
 - [Original Implementation](https://github.com/Chris-Merced/CS320ContactServiceOriginal)
 - [Enhanced with Hash Map Structure](https://github.com/Chris-Merced/CapstoneContactsApplicationWithHashmap)
 
-<details>
+<details markdown="1">
 <summary><strong>Enhancement Narrative</strong></summary>
 
 ### Artifact Description
