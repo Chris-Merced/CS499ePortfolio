@@ -50,7 +50,6 @@ This program equipped me with technical skills, professional practices, and secu
 
 ## Navigation
 
-- [Professional Self-Assessment](self-assessment) - An introduction to my skills and professional growth
 - [Code Review](code-review) - Video walkthrough of my enhancement plans
 - [Enhanced Artifacts](artifacts) - Showcase of my technical improvements
 
